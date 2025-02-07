@@ -35,15 +35,18 @@ while True:
         grid = TSP.readFrame()
 
     # Clear the screen by blacking it out
-    screen.fill(BLACK)
+    # screen.fill(BLACK)
 
     # Loop through all pixels in the frame
     for row in range(rows):
         for column in range(columns):
             # Get the pixel value and set the gray value accordingly
-            pixel = grid[row][column]
-            if pixel > TRESHOLDDF:
-                color = (pixel, pixel, pixel)
+            if grid[row][column]:
+                color = (0,255,0)
+            else:
+                color = BLACK
+
+
 
 
             # Draw the pixel on the screen
