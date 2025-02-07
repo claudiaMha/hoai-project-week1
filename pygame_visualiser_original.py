@@ -9,8 +9,6 @@ PIXEL_WIDTH = 20
 PIXEL_HEIGHT = 10
 PIXEL_MARGIN = 2
 BLACK = (0, 0, 0)
-color= BLACK
-TRESHOLDDF = 200
 
 # Initialise the PyGame screen according to resolution
 pygame.init()
@@ -42,9 +40,7 @@ while True:
         for column in range(columns):
             # Get the pixel value and set the gray value accordingly
             pixel = grid[row][column]
-            if pixel > TRESHOLDDF:
-                color = (pixel, pixel, pixel)
-
+            color = (pixel, pixel, pixel)
 
             # Draw the pixel on the screen
             pygame.draw.rect(
@@ -58,9 +54,9 @@ while True:
                 ]
             )
 
-
     # Limit the framerate to 60FPS
     clock.tick(60)
 
     # Draw to the display
     pygame.display.flip()
+

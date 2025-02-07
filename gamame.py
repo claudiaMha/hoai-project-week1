@@ -35,32 +35,36 @@ while True:
         grid = TSP.readFrame()
 
     # Clear the screen by blacking it out
-    screen.fill(BLACK)
+    #screen.fill(BLACK)
 
     # Loop through all pixels in the frame
+    pxList = []
+
     for row in range(rows):
         for column in range(columns):
             # Get the pixel value and set the gray value accordingly
-            pixel = grid[row][column]
-            if pixel > TRESHOLDDF:
-                color = (pixel, pixel, pixel)
-
+            # pixel = grid[row][column]
+            currentPixel = grid[row][column]
+            pxList.append(currentPixel)
 
             # Draw the pixel on the screen
-            pygame.draw.rect(
-                screen,
-                color,
-                [
-                    PIXEL_MARGIN + ((PIXEL_MARGIN + PIXEL_WIDTH) * column),
-                    PIXEL_MARGIN + ((PIXEL_MARGIN + PIXEL_HEIGHT) * row),
-                    PIXEL_WIDTH,
-                    PIXEL_HEIGHT
-                ]
-            )
+
+    for item in pxList:
+
+        pygame.draw.rect(
+            screen,
+            color,
+            [
+                PIXEL_MARGIN + ((PIXEL_MARGIN + PIXEL_WIDTH) * column),
+                PIXEL_MARGIN + ((PIXEL_MARGIN + PIXEL_HEIGHT) * row),
+                PIXEL_WIDTH,
+                PIXEL_HEIGHT
+            ])
 
     # Limit the framerate to 60FPS
     clock.tick(60)
 
     # Draw to the display
     pygame.display.flip()
+
 
