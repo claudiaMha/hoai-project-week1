@@ -40,7 +40,11 @@ while True:
         for column in range(columns):
             # Get the pixel value and set the gray value accordingly
             pixel = grid[row][column]
-            color = (pixel, pixel, pixel)
+            if pixel>0.6:
+                while True:
+                    color = (pixel, pixel, pixel)
+            else:
+                color = BLACK
 
             # Draw the pixel on the screen
             pygame.draw.rect(
