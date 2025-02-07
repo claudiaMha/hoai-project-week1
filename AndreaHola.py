@@ -1,1 +1,7 @@
 import pygame
+
+ROWS = 27
+COLUMNS = 19
+THRESHOLD = 50
+PIXEL_WIDTH = 10
+PIXEL_HEIGHT = 10
